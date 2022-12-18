@@ -28,9 +28,6 @@ gallery.addEventListener('click', onClickLargeImg);
 
 function onClickLargeImg(evt) {
   evt.preventDefault();
-  if (evt.target.nodeName !== 'IMG') {
-    return;
-  }
 }
 
 let lightbox = new SimpleLightbox('.gallery a', {
