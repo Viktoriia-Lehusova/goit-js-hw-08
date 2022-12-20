@@ -14,8 +14,19 @@ onPopulateForm();
 function onFormSubmit(evt) {
   evt.preventDefault();
 
-  evt.target.reset();
-  localStorage.removeItem(SAVED_KEY);
+  const savedForm = localStorage.getItem(SAVED_KEY);
+  const parseForm = JSON.parse(savedForm);
+
+  if (
+    parseForm === null ||
+    parseForm.email === '' ||
+    parseForm.message === ''
+  ) {
+    alert('Всі поля повинні бути заповнені');
+  } else {
+    evt.target.reset();
+    localStorage.removeItem(SAVED_KEY);
+  }
 }
 
 function onFormInput(evt) {
