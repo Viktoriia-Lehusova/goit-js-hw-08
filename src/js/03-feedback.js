@@ -25,6 +25,7 @@ function onFormSubmit(evt) {
 
   const savedForm = localStorage.getItem(SAVED_KEY);
   const parseForm = JSON.parse(savedForm);
+  console.log(parseForm);
 
   formData.email = '';
   formData.message = '';
